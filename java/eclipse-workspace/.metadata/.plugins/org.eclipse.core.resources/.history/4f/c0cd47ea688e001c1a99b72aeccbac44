@@ -1,0 +1,25 @@
+package com.vti.backend;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.List;
+
+import com.vti.DAO.DepartmentDAO;
+import com.vti.entity.Department;
+import com.vti.ultis.jdbcUltis;
+
+public class Exercise2 {
+	private jdbcUltis jdbc;
+	private DepartmentDAO departmentDAO;
+
+	public Exercise2() throws FileNotFoundException, IOException {
+		super();
+		departmentDAO = new DepartmentDAO();
+	}
+
+	public void question1() {
+		System.out.println("In ra danh sach cac Department co tren he thong");
+		List<Department> listDepartments = departmentDAO.get
+	}
+
+}

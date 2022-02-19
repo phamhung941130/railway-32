@@ -1,0 +1,5 @@
+package com.vti.DAO;
+
+public class PositionDAO {
+
+}

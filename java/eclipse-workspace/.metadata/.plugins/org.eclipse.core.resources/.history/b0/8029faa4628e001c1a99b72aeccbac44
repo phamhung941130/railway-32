@@ -1,0 +1,16 @@
+package com.vti.frontend;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.SQLException;
+
+import com.vti.backend.Exercise2;
+
+public class Demo {
+	public static void main(String[] args)
+			throws FileNotFoundException, IOException, ClassNotFoundException, SQLException {
+		Exercise2 exercise1 = new Exercise2();
+		exercise1.question1();
+	}
+
+}

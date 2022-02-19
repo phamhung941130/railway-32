@@ -1,0 +1,10 @@
+package com.vti.entity;
+
+public class MyMath2 {
+	public static final Double PI = 3.14;
+
+	public static Double sum(int a) {
+		return a + PI;
+
+	}
+}

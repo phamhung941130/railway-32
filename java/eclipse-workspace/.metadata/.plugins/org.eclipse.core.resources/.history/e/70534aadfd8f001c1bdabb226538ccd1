@@ -1,0 +1,22 @@
+package com.vti.backend.datalayer;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.vti.entity.Position;
+import com.vti.ultis.jdbcUltis;
+
+public class PositionRepository implements IPositionRepository {
+private jdbcUltis jdbc;
+public PositionRepository() {
+	jdbc= new jdbcUltis();
+}
+
+
+	public Position getPositionByID(int posid) throws ClassNotFoundException, SQLException {
+		String sqlpos = "SELECT * FROM position WHERE PositionID = ?";
+		ResultSet resultSet = jdbc.executeQuery(sqlpos);
+		return null;
+	}
+
+}

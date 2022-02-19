@@ -1,0 +1,130 @@
+package com.vti.backend;
+
+import java.util.ArrayList;
+
+import com.vti.entity.MyMath;
+import com.vti.entity.PrimaryStudent;
+import com.vti.entity.Q1Student;
+import com.vti.entity.SecondaryStudent;
+import com.vti.ultis.ScannerUltis;
+
+public class Exercise1 {
+	public void question1() {
+		ArrayList<Q1Student> arrayListQ1 = new ArrayList<Q1Student>();
+		System.out.println("Khởi tạo 3 sinh viên");
+		for (int i = 0; i < 3; i++) {
+			System.out.println("Sinh viên " + (i + 1 + ":"));
+			Q1Student st = new Q1Student();
+			arrayListQ1.add(st);
+		}
+		System.out.println("Thông tin các sinh viên vừa nhập: ");
+		for (int i = 0; i < arrayListQ1.size(); i++) {
+			System.out.println(arrayListQ1.get(i));
+		}
+		System.out.println("chuyen cac sinh vien sang dai hoc cong nghe: ");
+		Q1Student.setCollege("Dai hoc bach khoa");
+		System.out.println("Thong tin sinh vien sau khi chuyen ");
+		for (int i = 0; i < arrayListQ1.size(); i++) {
+			System.out.println(arrayListQ1.get(i));
+
+		}
+	}
+
+	public void question2() {
+		Q1Student[] arrayQ2 = new Q1Student[3];
+		System.out.println("khoi tao 3 sinh vien: ");
+		for (int i = 0; i < 3; i++) {
+			System.out.println("sinh vien thu " + i + ":");
+			Q1Student q1Student = new Q1Student();
+			arrayQ2[i] = q1Student;
+		}
+		for (int i = 0; i < arrayQ2.length; i++) {
+			System.out.println("thong tin sinh vien vua nhap la: " + arrayQ2[i]);
+		}
+		System.out.println("cac ban sinh vien nop quy, moi Student 100k");
+		System.out.println("Tong quy: " + (Q1Student.moneyGroup += 300));
+		System.out.println("tru 50k");
+		System.out.println("Tong quy: " + (Q1Student.moneyGroup -= 50));
+		System.out.println("tru 20k");
+		System.out.println("Tong quy: " + (Q1Student.moneyGroup -= 20));
+		System.out.println("tru 150k");
+		System.out.println("Tong quy: " + (Q1Student.moneyGroup -= 150));
+		System.out.println("moi nguoi dong 50k");
+		System.out.println("Tong quy :" + (Q1Student.moneyGroup += 150));
+	}
+
+	public void question3() {
+		System.out.println("Nhap vao so int 1 :");
+		int a = ScannerUltis.inputInt();
+		System.out.println("nhap vao so int 2 :");
+		int b = ScannerUltis.inputInt();
+
+		System.out.println("Max a va b: " + MyMath.max(a, b));
+		System.out.println("Min a va b: " + MyMath.min(a, b));
+		System.out.println("Sum a va b: " + MyMath.sum(a, b));
+
+	}
+
+	public void question4() {
+		System.out.println("---------------question4---------------");
+		Q1Student st = new Q1Student();
+		System.out.println("collect la: " + Q1Student.getCollege());
+		System.out.println("thay doi collect :");
+		Q1Student.setCollege("DHHN");
+		System.out.println("Collect la: " + Q1Student.getCollege());
+	}
+
+	public void question5() {
+		System.out.println("Su dung For de tao sinh vien: ");
+		for (int i = 0; i < 3; i++) {
+			System.out.println("Sinh vien " + (i + 1) + ":");
+			Q1Student st = new Q1Student();
+
+		}
+		System.out.println("su dung ham khoi tao de tao sinh vien");
+		Q1Student st2 = new Q1Student();
+		Q1Student st3 = new Q1Student();
+		System.out.println("so sinh vien dc tao ra tren he thong la: " + Q1Student.COUNT);
+	}
+
+	public void question6() {
+		System.out.println("Tạo 2 Primary Student: ");
+		PrimaryStudent pSt1 = new PrimaryStudent();
+		PrimaryStudent pSt2 = new PrimaryStudent();
+		System.out.println("Tạo 6 Secondary Student: ");
+		SecondaryStudent sST1 = new SecondaryStudent();
+		SecondaryStudent sST2 = new SecondaryStudent();
+		SecondaryStudent sST3 = new SecondaryStudent();
+		SecondaryStudent sST4 = new SecondaryStudent();
+		SecondaryStudent sST5 = new SecondaryStudent();
+		SecondaryStudent sST6 = new SecondaryStudent();
+		System.out.println("Thông tin số lượng sinh viên");
+		String leftAlignFormat = "| %-18s | %-4d |%n";
+
+		System.out.format("+--------------------+------+%n");
+		System.out.format("| Category           | SL   |%n");
+		System.out.format("+--------------------+------+%n");
+
+		System.out.format(leftAlignFormat, "Student", Q1Student.COUNT);
+		System.out.format(leftAlignFormat, "PrimaryStudent", PrimaryStudent.COUNTPri);
+		System.out.format(leftAlignFormat, "SecondaryStudent", SecondaryStudent.COUNTSecond);
+
+		System.out.format("+--------------------+------+%n");
+	}
+
+	public void question7() {
+
+		System.out.println("Tạo Primary Student: ");
+		PrimaryStudent pSt = new PrimaryStudent();
+		System.out.println("Sinh viên Primary Student: " + pSt);
+		System.out.println("Tạo Secondary Student: ");
+		SecondaryStudent sSt = new SecondaryStudent();
+		System.out.println("Sinh viên Secondary Student: " + sSt);
+		for (int i = 0; i < 8; i++) {
+			Q1Student st = new Q1Student();
+		}
+	}
+	public void question8() {
+		
+	}
+}

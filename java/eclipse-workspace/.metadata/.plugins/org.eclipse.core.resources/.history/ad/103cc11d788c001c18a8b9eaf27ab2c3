@@ -1,0 +1,7 @@
+package com.vti.backend;
+
+public class Exercise3 {
+	public static void question1() {
+		System.out.println("------------Demo Generic----------");
+	}
+}

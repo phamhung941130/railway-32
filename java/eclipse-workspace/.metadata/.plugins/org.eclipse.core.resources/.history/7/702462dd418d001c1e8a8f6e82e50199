@@ -1,0 +1,20 @@
+package com.vti.backend;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.SQLException;
+
+import com.vti.ultis.jdbcUltis;
+
+public class Exercise1_test {
+	private jdbcUltis jdbc;
+
+	public Exercise1_test() throws FileNotFoundException, IOException {
+		jdbc = new jdbcUltis();
+	}
+
+	public void question1() throws ClassNotFoundException, SQLException {
+		System.out.println("-----Test ket noi-----");
+		jdbc.connnectionTestting();
+	}
+}

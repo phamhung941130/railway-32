@@ -1,0 +1,24 @@
+package com.vti.backend;
+
+import com.vti.entity.Student;
+
+public class Exercise3 {
+	public static void question1() {
+		System.out.println("------------Demo Generic----------");
+		Student<Integer> student1 = new Student<Integer>(1, "Lap");
+		Student<Float> student2 =  new Student<Float>(2.0f, "Hieu");
+		Student<String> student3 = new Student<String>("VTI003", "Trang");
+		Student<Integer> student4 = new Student<Integer>(4, "Dat")
+		
+		
+		
+		
+
+		System.out.println("Thong tin hoc vien la: ");
+		System.out.println(student1.toString());
+		System.out.println(student2.toString());
+		System.out.println(student3.toString());
+		System.out.println(student4.toString());
+
+	}
+}

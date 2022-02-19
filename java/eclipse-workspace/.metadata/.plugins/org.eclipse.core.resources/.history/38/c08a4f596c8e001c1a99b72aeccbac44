@@ -1,0 +1,34 @@
+package com.vti.DAO;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.vti.entity.Department;
+import com.vti.ultis.jdbcUltis;
+
+public class DepartmentDAO {
+	private jdbcUltis jdbc;
+
+	public DepartmentDAO() throws FileNotFoundException, IOException {
+		jdbc = new jdbcUltis();
+	}
+
+	public List<Department> getListDepartment() throws ClassNotFoundException, SQLException {
+//		Ket noi toi DB, lay ra bang Department ==> chuyen ve listDepartment
+		String slqSelec = "SELECT * FROM department ORDER BY DepartmentID";
+		ResultSet resultSet = jdbc.executeQuery(slqSelec);
+		List<Department> listDep = new ArrayList<Department>();
+		while (resultSet.next()) {
+			Department department = new Department();
+			department.setId(resultSet.getInt(1));
+			department.setName(resultSet.getString(2));
+			listDep.add(department);
+		}
+		return listDep;
+
+	}
+}

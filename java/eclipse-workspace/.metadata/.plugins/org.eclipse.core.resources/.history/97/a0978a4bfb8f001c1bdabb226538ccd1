@@ -1,0 +1,26 @@
+package com.vti.backend.datalayer;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.vti.entity.Department;
+import com.vti.ultis.jdbcUltis;
+
+public class DepartmentRepository implements IDepartmentRepository {
+	private jdbcUltis jdbc;
+
+	public DepartmentRepository() throws FileNotFoundException, IOException {
+		jdbc = new jdbcUltis();
+	}
+
+	@Override
+	public Department getDepartmentById(int depid) throws ClassNotFoundException, SQLException {
+		String sqlGetDepByID = "SELECT * FROM department WHERE DepartmentID = ?";
+		PreparedStatement preparedStatement = jdbc.createPrepareStatement(sqlGetDepByID);
+
+		return null;
+	}
+
+}

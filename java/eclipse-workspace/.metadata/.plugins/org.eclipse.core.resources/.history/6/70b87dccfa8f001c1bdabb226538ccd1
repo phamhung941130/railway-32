@@ -1,0 +1,20 @@
+package com.vti.backend.datalayer;
+
+import com.vti.entity.Department;
+import com.vti.ultis.jdbcUltis;
+
+public class DepartmentRepository implements IDepartmentRepository {
+	private jdbcUltis jdbc;
+
+	public DepartmentRepository() {
+		jdbc = new jdbcUltis();
+	}
+
+	@Override
+	public Department getDepartmentById(int depid) {
+		String sqlGetDepByID = "SELECT * FROM department WHERE DepartmentID = ?";
+
+		return null;
+	}
+
+}

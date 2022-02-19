@@ -1,0 +1,13 @@
+package com.vti.frontend;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import com.vti.backend.Exercise1;
+
+public class Demo1 {
+	public static void main(String[] args) throws FileNotFoundException, IOException {
+		Exercise1 exercise1 = new Exercise1();
+		exercise1.question1();
+	}
+}

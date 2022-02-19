@@ -1,0 +1,10 @@
+package com.vti.entity;
+
+public class Configs extends Q1Student {
+	public static int COUNTPri = 0;
+
+	public Configs() {
+		super();
+		COUNTPri++;
+	}
+}

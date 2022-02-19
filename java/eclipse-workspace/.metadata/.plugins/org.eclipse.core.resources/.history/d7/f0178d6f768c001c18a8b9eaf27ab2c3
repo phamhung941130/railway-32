@@ -1,0 +1,15 @@
+package com.vti.frontend;
+
+import com.vti.backend.Exercise1;
+
+public class Demo {
+	public static void main(String[] args) {
+//		Exercise1 exercise1 = new Exercise1();
+//		Exercise1.Question1();
+//		Exercise1.Question2();
+//		Exercise1.question2queue();
+//		Exercise1.question3HashSet();
+//		Exercise1.question3TreeSet();
+		Exercise1.question6();
+	}
+}

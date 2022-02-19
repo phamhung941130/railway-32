@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 4 packages to &apos;Railway32_Testingsystem_8_6_Generic/src&apos;&#x0D;&#x0A;- Original project: &apos;Railway32_Testingsystem_8&apos;&#x0D;&#x0A;- Destination element: &apos;Railway32_Testingsystem_8_6_Generic/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     Railway32_Testingsystem_8/src/com.vti.frontend&#x0D;&#x0A;     Railway32_Testingsystem_8/src/com.vti.ultis&#x0D;&#x0A;     Railway32_Testingsystem_8/src/com.vti.entity&#x0D;&#x0A;     Railway32_Testingsystem_8/src/com.vti.backend" description="Copy packages" destination="=Railway32_Testingsystem_8_6_Generic/src" element1="/src&lt;com.vti.frontend" element2="/src&lt;com.vti.ultis" element3="/src&lt;com.vti.entity" element4="/src&lt;com.vti.backend" flags="589830" fragments="4" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1644720606299" version="1.0"/>
+</session>

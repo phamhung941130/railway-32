@@ -1,0 +1,15 @@
+package com.vti.backend.businesslayer;
+
+import java.util.List;
+
+import com.vti.entity.Account;
+
+public class AccountService implements IAccountService {
+
+	@Override
+	public List<Account> getListAccount() {
+
+		return null;
+	}
+
+}

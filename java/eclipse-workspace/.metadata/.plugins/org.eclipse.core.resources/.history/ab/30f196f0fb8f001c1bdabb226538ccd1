@@ -1,0 +1,43 @@
+package com.vti.backend.datalayer;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.vti.entity.Account;
+import com.vti.entity.Department;
+import com.vti.ultis.jdbcUltis;
+
+public class AccountRepository implements IAccountRepository {
+	private jdbcUltis jdbc;
+	private DepartmentRepository departmentRepository;
+
+	public AccountRepository() throws FileNotFoundException, IOException {
+		jdbc = new jdbcUltis();
+		departmentRepository= new DepartmentRepository();
+	}
+
+	@Override
+	public List<Account> getListAccount() throws ClassNotFoundException, SQLException {
+		String sqlSeLecAcc = "SELECT * FROM account ORDER BY AccountID ASC";
+		ResultSet resultSet = jdbc.executeQuery(sqlSeLecAcc);
+		List<Account> listAcount = new ArrayList<Account>();
+		while (resultSet.next()) {
+			Account account = new Account();
+			account.setId(resultSet.getInt(1));
+			account.setEmail(resultSet.getString(2));
+			account.setUserName(resultSet.getString(3));
+			account.setFullName(resultSet.getString(4));
+			DepartmentRepository departmentRepository = 
+			
+					Department department =departmentRepository.getDepartmentById(resultSet.getInt(5));
+			account.setDepartment(de.);
+			
+		}
+		return null;
+	}
+
+}

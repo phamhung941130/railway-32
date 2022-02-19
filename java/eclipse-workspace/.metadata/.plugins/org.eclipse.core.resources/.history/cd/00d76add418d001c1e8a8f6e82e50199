@@ -1,0 +1,36 @@
+package com.vti.backend;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.vti.ultis.jdbcUltis;
+
+public class Exercise1_test {
+	private jdbcUltis jdbc;
+
+	public Exercise1_test() throws FileNotFoundException, IOException {
+		jdbc = new jdbcUltis();
+	}
+
+	public void question1() throws ClassNotFoundException, SQLException {
+		System.out.println("-----Test ket noi-----");
+		jdbc.connnectionTestting();
+	}
+	public void question2() throws ClassNotFoundException, SQLException {
+		System.out.println("in ra du lieu bag Position");
+		String sql = "SELECT * FROM position";
+		ResultSet resultPosition = jdbc.executeQuery(sql);
+		System.out.println("Thong tin Position co tren he thong la");
+		System.out.println("+--------+-----------------------------+");
+		System.out.println("|    ID  |        Position Name        |");
+		System.out.println("+--------+-----------------------------+");
+	
+		while (resultPosition.next()) {
+			System.out.format("|%-8d|%-29s|%n", resultPosition.getInt("PositionID"),resultPosition.getString("PositionName"));
+			System.out.println("+--------+-----------------------------+");
+
+		}
+	}
+}

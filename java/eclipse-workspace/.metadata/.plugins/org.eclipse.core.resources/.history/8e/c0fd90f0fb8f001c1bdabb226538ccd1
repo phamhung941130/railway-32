@@ -1,0 +1,23 @@
+package com.vti.backend.datalayer;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.List;
+
+import com.vti.entity.Account;
+import com.vti.ultis.jdbcUltis;
+
+public class AccountRepository implements IAccountRepository {
+	private jdbcUltis jdbc;
+
+	public AccountRepository() throws FileNotFoundException, IOException {
+		jdbc = new jdbcUltis();
+	}
+
+	@Override
+	public List<Account> getListAccount() {
+		String sqlSeLecAcc = "SELECT * FROM account ORDER BY AccountID ASC";
+		return null;
+	}
+
+}

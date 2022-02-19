@@ -1,0 +1,8 @@
+package com.vti.frontend;
+
+import com.vti.backend.Exercise1;
+
+public class Demo {
+	Exercise1 exercise1 = 
+
+}

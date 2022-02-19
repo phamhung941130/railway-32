@@ -1,0 +1,12 @@
+package com.vti.frontend;
+
+import com.vti.backend.Exercise3;
+
+public class demo3 {
+	public static void main(String[] args) {
+		Exercise3 exe3 = new Exercise3();
+//		exe3.question1();
+//		exe3.question2();
+		exe3.question3();
+	}
+}

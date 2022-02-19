@@ -1,0 +1,15 @@
+package com.vti.backend.datalayer;
+
+import java.util.List;
+
+import com.vti.entity.Account;
+
+public class AccountRepository implements IAccountRepository {
+
+	@Override
+	public List<Account> getListAccount() {
+
+		return null;
+	}
+
+}

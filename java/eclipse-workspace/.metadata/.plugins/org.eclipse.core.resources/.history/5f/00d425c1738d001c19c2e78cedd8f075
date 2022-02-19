@@ -1,0 +1,38 @@
+package com.vti.entity;
+
+import java.time.LocalDate;
+import java.util.Date;
+
+public class Exam {
+	public int id;
+	public String code;
+	public String title;
+	public CategoryQuestion category;
+	public int duration;
+	public Account creator;
+	public Date CreateDate;
+	public Question[] questions;
+
+	/**
+	 * @param id
+	 * @param code
+	 * @param title
+	 * @param category
+	 * @param duration
+	 * @param creator
+	 * @param localDate
+	 * @param questions
+	 */
+	public Exam(int id, String code, String title, int duration, LocalDate localDate) {
+		super();
+		this.id = id;
+		this.code = code;
+		this.title = title;
+
+		this.duration = duration;
+
+		CreateDate = localDate;
+
+	}
+
+}

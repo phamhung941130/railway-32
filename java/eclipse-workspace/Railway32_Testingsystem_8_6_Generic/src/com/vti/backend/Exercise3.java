@@ -1,0 +1,65 @@
+package com.vti.backend;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.vti.entity.Student;
+import com.vti.ultis.ScannerUltis;
+
+public class Exercise3 {
+	public static void question1() {
+		System.out.println("------------Demo Generic----------");
+		Student<Integer> student1 = new Student<Integer>(1, "Lap");
+		Student<Float> student2 = new Student<Float>(2.0f, "Hieu");
+		Student<String> student3 = new Student<String>("VTI003", "Trang");
+		Student<Integer> student4 = new Student<Integer>(4, "Dat");
+
+		System.out.println("Thong tin hoc vien la: ");
+		System.out.println(student1.toString());
+		System.out.println(student2.toString());
+		System.out.println(student3.toString());
+		System.out.println(student4.toString());
+
+	}
+
+	public static void question2() {
+		System.out.println("moi ban nhap vao 1 so nguyen: ");
+		int numInput = ScannerUltis.inputInt();
+		printInor(numInput);
+
+		System.out.println("moi ban nhap vao so thuc: ");
+		float numfloatInput = ScannerUltis.inputFloat();
+		printInor(numfloatInput);
+		Student<Integer> student = new Student<Integer>(1, "DaoNQ");
+		printInor(student);
+	}
+
+//	private static void printInforFloat(float numfloatInput) {
+//		System.out.println("Thong tin ban vua nhap tu ban phim la: ");
+//		System.out.println(numfloatInput);
+//	}
+
+	private static <T> void printInor(T input) {
+		System.out.println("Thong tin ban vua nhap tu ban phim la: ");
+		System.out.println(input);
+	}
+
+	public static void question4() {
+		Integer[] intArray = { 1, 2, 3, 4, 5, 6, 7 };
+		Float[] floatArray = { 1.0f, 2.0f, 3.0f, 4.0f, 5.2f };
+		Double[] doubleArray = { 1.5, 2.0, 3.0, 4.0, 5.2 };
+		System.out.println("---- Thong tin mang Interger cua ban la: ");
+		printInforArray(doubleArray);
+	}
+
+	private static <E> void printInforArray(E[] inputArray) {
+		for (E data : inputArray) {
+			System.out.println(data);
+		}
+
+	}
+
+	private static <K, V> void quesition5() {
+		Map<K, V> map1 = new HashMap<K, V>();
+	}
+}

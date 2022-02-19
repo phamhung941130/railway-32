@@ -1,0 +1,276 @@
+package com.vti.backend;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+import java.util.Set;
+import java.util.SortedSet;
+import java.util.Stack;
+import java.util.TreeSet;
+
+import com.vti.entity.Student;
+import com.vti.ultis.ScannerUltis;
+
+public class Exercise1 {
+	private static List<Student> studentArrayList;
+
+	public Exercise1() {
+		studentArrayList = new ArrayList<Student>();
+		Student student1 = new Student("Dung");
+		Student student2 = new Student("MinhAnh");
+		Student student3 = new Student("Quang");
+		Student student4 = new Student("Lap");
+		Student student5 = new Student("Dat");
+		Student student6 = new Student("Hieu");
+		Student student7 = new Student("Dat");
+
+		studentArrayList.add(student1);
+		studentArrayList.add(student2);
+		studentArrayList.add(student3);
+		studentArrayList.add(student4);
+		studentArrayList.add(student5);
+		studentArrayList.add(student6);
+		studentArrayList.add(student7);
+	}
+
+	public static void Question1() {
+		while (true) {
+			loadmenuQuestion1();
+			int choose = ScannerUltis.inputIntPositive();
+			switch (choose) {
+			case 1:
+				System.out.println("1,in ra tong so phan tu");
+				System.out.println("tong so phan tu la :" + studentArrayList.size());
+				break;
+			case 2:
+				System.out.println("b,lay ra phan tu so 4");
+				System.out.println("phan tu so 4 la: " + studentArrayList.get(3));
+				break;
+			case 3:
+				System.out.println("c,lay ra phan tu dau va cuoi");
+				System.out.println("phan tu dau tien: " + studentArrayList.get(0));
+				System.out.println("phan tu cuoi cung: " + studentArrayList.get(studentArrayList.size() - 1));
+				break;
+			case 4:
+				System.out.println("d, them phan tu vao vi tri dau tien");
+				Student student8 = new Student("student8");
+				studentArrayList.add(0, student8);
+				for (Student student : studentArrayList) {
+					System.out.println(student.toString());
+				}
+				break;
+			case 5:
+				System.out.println("e, them phan tu vao vi tri cuoi cung");
+				Student student9 = new Student("student9");
+				studentArrayList.add((studentArrayList.size()), student9);
+				for (Student student : studentArrayList) {
+					System.out.println(student.toString());
+				}
+
+				break;
+			case 6:
+				System.out.println("---f---");
+				Collections.reverse(studentArrayList);
+				for (Student student : studentArrayList) {
+					System.out.println(student.toString());
+				}
+				break;
+			case 7:
+				Question1g();
+				break;
+			case 8:
+				duplicateNamestudent();
+				break;
+			case 9:
+				System.out.println("nhap vao Id can xoa ten");
+				int delName = ScannerUltis.inputIntPositive();
+				for (Student student : studentArrayList) {
+					if (student.getId() == delName) {
+						student.setName(null);
+						System.out.println(student.toString());
+					}
+				}
+				break;
+			case 10:
+				System.out.println("-----------k, Delete student co id = 5-------------");
+				Iterator<Student> iterator = studentArrayList.iterator();
+				while (iterator.hasNext()) {
+					Student student = iterator.next();
+					if (student.getId() == 5) {
+						iterator.remove();
+					}
+				}
+				System.out.println("thong tin arraylist sau khi xoa");
+				for (Student student : studentArrayList) {
+					System.out.println(student.toString());
+				}
+				break;
+			case 11:
+				List<Student> studentCopies = new ArrayList<Student>();
+				studentCopies.addAll(studentArrayList);
+				System.out.println("phan tu trong studentCopies: ");
+				for (Student student : studentCopies) {
+					System.out.println(student);
+				}
+				break;
+			default:
+				break;
+			}
+		}
+	}
+
+	private static void duplicateNamestudent() {
+		System.out.println("Student trung ten: ");
+		for (int i = 0; i < studentArrayList.size(); i++) {
+			for (int j = 0; j < studentArrayList.size(); j++) {
+				if (studentArrayList.get(i).getName().equals(studentArrayList.get(j).getName())) {
+					System.out.println(studentArrayList.get(i).toString());
+				}
+			}
+		}
+	}
+
+	private static void loadmenuQuestion1() {
+		System.out.println("moi ban chon bai tap muon xem");
+		System.out.println("1) In ra tổng số phần tử của students");
+		System.out.println("2) Lấy phần tử thứ 4 của students");
+		System.out.println("3) In ra phần tử đầu và phần tử cuối của students");
+		System.out.println("4) Thêm 1 phần tử vào vị trí đầu của students");
+		System.out.println("5) Thêm 1 phần tử vào vị trí cuối của students");
+		System.out.println("6) Đảo ngược vị trí của students");
+		System.out.println("7) Tạo 1 method tìm kiếm student theo name");
+		System.out.println("8) Tạo 1 method để in ra các student có trùng tên");
+		System.out.println("9) Xóa name của student có id = 2");
+		System.out.println("10) Delete student có id = 5;");
+		System.out.println("11) Tạo 1 ArrayList tên là studentCopies và add tất cả students vào studentCopies");
+	}
+
+	public static void Question1g() {
+		List<Student> studentArrayList = new ArrayList<Student>();
+		System.out.println("moi ban nhap vao name can tim");
+		String a = ScannerUltis.inputString();
+		Iterator<Student> iterator = studentArrayList.iterator();
+		while (iterator.hasNext()) {
+			Student student = iterator.next();
+			if (student.getName().equals(a)) {
+				System.out.println(student.toString());
+			} else {
+				System.out.println("ko co student can tim");
+			}
+			return;
+		}
+
+	}
+
+	public static void Question2() {
+		Stack<Student> stackSt = new Stack<Student>();
+		System.out.println("stdent theo tt som den muon: ");
+		for (int i = 0; i < 4; i++) {
+			Student student = new Student("Student" + (i + 1));
+			stackSt.push(student);
+		}
+		Iterator<Student> iteratorSt = stackSt.iterator();
+		while (iteratorSt.hasNext()) {
+			Student st = iteratorSt.next();
+			System.out.println(st);
+		}
+		System.out.println("student den muon nhat: " + stackSt.peek());
+		for (Student student : stackSt) {
+			System.out.println(student);
+		}
+	}
+
+	public static void question2queue() {
+		Student student1 = new Student("Dung");
+		Student student2 = new Student("MinhAnh");
+		Student student3 = new Student("Quang");
+		Student student4 = new Student("Lap");
+		Student student5 = new Student("Dat");
+		Student student6 = new Student("Hieu");
+		Student student7 = new Student("Dat");
+		Queue<Student> studentQueue = new LinkedList<Student>();
+		studentQueue.add(student1);
+		studentQueue.add(student2);
+		studentQueue.add(student3);
+		studentQueue.add(student4);
+		studentQueue.add(student5);
+		studentQueue.add(student6);
+		studentQueue.add(student7);
+//dung iteror
+		System.out.println("su dung Iterator cho queue");
+		Iterator<Student> iteratorQueue = studentQueue.iterator();
+		while (iteratorQueue.hasNext()) {
+			Student student = iteratorQueue.next();
+			System.out.println(student.toString());
+		}
+		System.out.println("su dung poll");
+		System.out.println(studentQueue.poll().toString());
+		System.out.println(studentQueue.poll().toString());
+
+		System.out.println("dl con lai:");
+		Iterator<Student> iteratorQueue1 = studentQueue.iterator();
+		while (iteratorQueue1.hasNext()) {
+			Student student = iteratorQueue1.next();
+			System.out.println(student.toString());
+		}
+		System.out.println("su dung peek: ");
+		System.out.println(studentQueue.peek().toString());
+		System.out.println(studentQueue.peek().toString());
+		System.out.println(studentQueue.peek().toString());
+		System.out.println("dl con lai:");
+		Iterator<Student> iteratorQueue2 = studentQueue.iterator();
+		while (iteratorQueue2.hasNext()) {
+			Student student = iteratorQueue2.next();
+			System.out.println(student.toString());
+		}
+	}
+
+	public static void question3HashSet() {
+		Student student1 = new Student("Dung");
+		Student student2 = new Student("MinhAnh");
+		Student student3 = new Student("Quang");
+		Student student4 = new Student("Lap");
+		Student student5 = new Student("Dat");
+		Student student6 = new Student("Hieu");
+		Student student7 = new Student("Dat");
+		Set<Student> studentHashSet = new HashSet<Student>();
+
+		studentHashSet.add(student1);
+		studentHashSet.add(student2);
+		studentHashSet.add(student3);
+		studentHashSet.add(student4);
+		studentHashSet.add(student5);
+		studentHashSet.add(student6);
+		studentHashSet.add(student7);
+		studentHashSet.add(student7);
+
+		Iterator<Student> iteratorHashSet = studentHashSet.iterator();
+		while (iteratorHashSet.hasNext()) {
+			Student student = iteratorHashSet.next();
+			System.out.println(student.toString());
+		}
+	}
+
+	public static void question3TreeSet() {
+
+		SortedSet<String> studentTreeSet = new TreeSet<String>();
+
+		studentTreeSet.add("D");
+		studentTreeSet.add("C");
+		studentTreeSet.add("A");
+		studentTreeSet.add("B");
+		studentTreeSet.add("F");
+		studentTreeSet.add("G");
+		studentTreeSet.add("E");
+
+		Iterator<Student> iteratorTreeSet = studentTreeSet.iterator();
+		while (iteratorTreeSet.hasNext()) {
+			Student studentName = iteratorTreeSet.next();
+			System.out.println(studentName.toString());
+		}
+	}
+}

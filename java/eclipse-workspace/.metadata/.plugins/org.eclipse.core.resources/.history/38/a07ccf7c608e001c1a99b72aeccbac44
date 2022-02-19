@@ -1,0 +1,51 @@
+package com.vti.frontend;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.SQLException;
+
+import com.vti.backend.Exercise1;
+import com.vti.ultis.ScannerUltis;
+
+public class Demo1 {
+	public static void main(String[] args)
+			throws FileNotFoundException, IOException, ClassNotFoundException, SQLException {
+		Exercise1 exercise1 = new Exercise1();
+		while (true) {
+			System.out.println("moi ban chon chuc nang: ");
+			System.out.println("1.question1");
+			System.out.println("2.question2");
+			System.out.println("3.question3");
+			System.out.println("4.question4");
+			System.out.println("5.question5");
+			System.out.println("6.Exit");
+			int choose = ScannerUltis.inputIntPositive();
+			switch (choose) {
+			case 1:
+				exercise1.question1();
+				break;
+			case 2:
+				exercise1.question2();
+
+				break;
+			case 3:
+				exercise1.question3();
+
+				break;
+			case 4:
+				exercise1.question4();
+
+				break;
+			case 5:
+				exercise1.question5();
+
+				break;
+			case 6:
+
+				return;
+
+			}
+
+		}
+	}
+}

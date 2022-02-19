@@ -1,0 +1,14 @@
+package com.vti.entity;
+
+import java.time.LocalDate;
+
+public class Account {
+private int id;
+private String email;
+private String userName;
+private String fullName;
+private Department department;
+private Position position;
+private LocalDate createDate;
+
+}
